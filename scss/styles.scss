@@ -5,6 +5,7 @@
 @import 'header';
 @import 'socials';
 @import 'slick';
+@import 'slider';
 
 
 
@@ -29,6 +30,9 @@ body {
     margin: 0 auto;
     max-width: $container-width;
     width: 100%;
+    &--footer {
+        max-width: 770px;
+    }
     // padding: 15px;
     // @media screen and (max-width: 992px) {
     //     max-width: 750px;
@@ -38,9 +42,7 @@ body {
 .section {
     overflow: hidden;  
     position: relative;
-    min-height: 100vh;
-    margin-bottom: 20px;
-    // padding: 30px 0;
+    padding: 60px 0;
         &__link {
             @include posA ($top: auto, $left: 50%, $delta_y: 0); 
             text-align: center;
@@ -81,11 +83,12 @@ body {
             }
             &--white {
                 color: $body-color;
+                &:before{
+                    background-color: $body-color;
+                    
+                }
             }
-            &:before{
-                background-color: $body-color;
-                
-            }
+            
         }
         &__content {
             margin: 80px 0;
@@ -95,7 +98,8 @@ body {
         }
         &--bg{
             @include bg;
-            padding: 100px 0;
+            padding: 60px 0 150px;
+            min-height: 100vh;
         }
         
 
@@ -146,43 +150,12 @@ body {
         width: 100%;
           
     }
-    
 
     &__bg{
         @include posA;
-        min-width: 100%;
+        min-width:100%;
         height: 100vh;
         }
-}
-
-.header-slider{
-    height: 100vh;
-   z-index  : 1; 
-	&__heading{
-        @include flex ($align-items: center, $justify-content: center);
-		flex-direction: column;
-		align-items: center;
-		text-transform: uppercase;
-		// color: $body-color;
-		height: 100vh;
-
-	}
-	&__title{
-        @include font($title-ff, 7rem, $body-color, $fw: 700, $lh: 1.6);
-        letter-spacing: .05em;
-        z-index: 10;
-        margin: 0;
-	}
-	&__subtitle{
-        @include font($title-ff, 1.6rem, $body-color, $fw: 400, $lh: 1.6);
-        letter-spacing: .3em;
-        z-index: 100;
-    }
-    & .slick-dots {
-		position: absolute;
-		top: 35%;
-		right: 4%;
-	}
 }
 
 // h1 {
@@ -275,20 +248,26 @@ body {
         background-color: rgba($primary-color, 1);
         border-color: $primary-color;
         color: $body-color;
-        transform: scale(.9) ;  
-    }   
-}
-
-.news-slider{
-	padding: 10px 0 50px;
-	display: flex;
-		flex-direction: row;
-		flex-wrap: nowrap;
-		justify-content: space-between;
-}
-
-.slide{
-	// width: 32%;
+        // transform: scale(.9) ;  
+    } 
+    &--centered {
+        text-align: center;  
+        margin-top: 30px; 
+    }
+    &--icon {
+        padding: 0;
+        width: 52px;
+        height: 52px;
+        line-height: 52px;
+        font-size: 2.1rem;
+    } 
+    &--slide {
+        color: rgba($body-color, 1);
+        background-color: transparent;
+	    border-color: $body-color ;
+	    border-radius: 50%;
+	    border: $border-width solid $body-color;
+    } 
 }
 
 .card{
@@ -358,9 +337,8 @@ body {
 
     &__author-text{
         height: 100%;
-        display: flex;
+        @include flex ($align-items: center, $justify-content: center);
         flex-direction: column;
-        justify-content: center;
     }
 
     &__author-name{
@@ -377,127 +355,69 @@ body {
 }
 
 
-// .header-slider {
-// 	position: relative;
-// 	z-index: 1;
-// 	& .slick-dots {
-// 		position: absolute;
-// 		top: 35%;
-// 		right: 4%;
-// 	}
-// }
-
-.slick-vertical .slick-slide{border: none;}
-
-.slick-dots {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-
-	& li {
-		width: 15px;
-		height: 15px;
-		border: 1px solid $body-color;
-		border-radius: 50%;
-		background-color: transparent;
-		margin-bottom: 40px;
-		cursor: pointer;
-		@include tr (all);
-
-		&:hover,
-		&:active,
-		&.slick-active {
-			background-color: $body-color;
-
-		}
-
-	}
-
-	& button {
-		display: none;
-
-	}
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+    &__item {
+        position: relative;
+        padding-top: 70%;
+        overflow: hidden;
+        @include tr;
+        @include hover{
+        box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.8);
+        // .grid__item img{
+        //      transform: translate(-50%, -50%) scale(1.4);
+        // }
+        }
+        &:after {
+            position: absolute;
+            content: '';
+            background: rgba(233, 79, 67, 0.62);
+            display: block;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: .2s;
+        }
+        &:nth-child(1) {
+            grid-row-start: 1;
+            grid-row-end: 3;
+            grid-column-start: 1;
+        }
+    }
 }
 
-
-
-.news-slider {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-
-	& .slick-dots {
-		display: flex;
-		flex-direction: row;
-		position: absolute;
-		left: 40%;
-		bottom: -3%;
-
-		& li {
-			margin: 0 30px 0 0;
-		}
-	}
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
-
-.slide-news{
-	padding: 0 15px;
-}
-
-.slick-arrow {
-	position: absolute;
-	width: 5.5rem;
-	height: 5.5rem;
-	display: inline-block;
-	z-index: 1;
-	top: 45%;
-	background-color: transparent;
-	border: none;
-	outline: none;
-	font-size: 0;
-	@include bg;
-	background-size: 100%;
-	background-image: url(../img/arrowDown.svg);
-	transition: .3s;
-	&.slick-prev {
-		left: -9%;
-		transform: rotate(-180deg);
-	}
-
-	&.slick-next {
-		right: -9%;
-
-	}
-
-	&:hover,
-	&:active {
-		background-color: $blue-color;
-		border-radius: 50%;
-	}
-}
-    
-
-
-
 
 
 .footer{
     background-color: $secondary-color;
-    padding: 80px 0 60px;
-    &__title {
-        text-align: center;
-        @include flex ($align-items: center, $justify-content: center);
-        flex-direction: column;
-        margin-bottom: 15px;
-    }
- 
-    &__text {
-        @include font($body-ff, 1.6rem, $body-color, 400, $lh: 1.6);
-        letter-spacing: .07em;
-        text-transform: capitalize;
-        @include clamp($line-clamp: 1);
+    padding: 100px 0;
+    @include bg;
+    min-width:100%;
+    &__copy {
+        margin: 30px 0;
+        @include font($btn-ff, 1.4rem, $body-color, 400, $lh: 1.6);
+        &__link{
+            text-decoration: none;
+            @include font($btn-ff, 1.4rem, $body-color, 400, $lh: 1.6);
+        }
     }
 }
+
 
 
 
