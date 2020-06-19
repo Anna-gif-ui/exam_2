@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap');
+/* font-family: 'Open Sans', sans-serif; */
+
+@font-face {
+    font-family: 'Gotham Book';
+    src: url('../fonts/gothambook/GothamBook.eot');
+    src: url('../fonts/gothambook/gothamBook.woff2') format('woff2'),
+         url('../fonts/gothambook/GothamBook.woff') format('woff'),
+         url('../fonts/gothambook/GothamBook.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+   }
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/gothammedium/gothammedium.woff2') format('woff2'),
+         url('../fonts/gothammedium/gothammedium.woff') format('woff'),
+         url('../fonts/gothammedium/gothammedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/gothambold/gothambold.eot');
+    src: url('../fonts/gothambold/gothambold.woff2') format('woff2'),
+         url('../fonts/gothambold/gothambold.woff') format('woff'),
+         url('../fonts/gothambold/gothambold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}

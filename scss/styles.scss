@@ -1,0 +1,503 @@
+@import 'normalize';
+@import 'variables';
+@import 'mixins';
+@import 'fonts';
+@import 'header';
+@import 'socials';
+@import 'slick';
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;  
+}
+
+body {
+    @include font($body-ff, 1.6rem, $body-color, $lh: 1.6);
+    padding: 0;
+    margin: 0;
+
+}
+
+.container {
+    outline: 1px solid red;
+    margin: 0 auto;
+    max-width: $container-width;
+    width: 100%;
+    // padding: 15px;
+    // @media screen and (max-width: 992px) {
+    //     max-width: 750px;
+    // }
+}
+
+.section {
+    overflow: hidden;  
+    position: relative;
+    min-height: 100vh;
+    margin-bottom: 20px;
+    // padding: 30px 0;
+        &__link {
+            @include posA ($top: auto, $left: 50%, $delta_y: 0); 
+            text-align: center;
+            bottom: 10%;
+            width: $social-size;
+            height: $social-size;
+            line-height: calc(#{$social-size} - 2 * #{$border-width});
+            display: inline-block;
+            border-radius: 50%;
+            border: $border-width solid rgba($body-color, .4); 
+            z-index: 20;      
+            @include hover{
+                background-color: $body-color;
+                border-color:rgba($body-color, 1);
+            }  
+            &__icon{
+                color: $body-color; 
+                @include hover{
+                    color: $primary-color; 
+                }
+            }        
+        }
+        &__title {
+            @include font($title-ff, 4.4rem, $secondary-color, 700, $lh: 2);
+            text-transform: uppercase;
+            @include clamp;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            position: relative;
+            &:before{
+                content: '';
+                display: block;
+                width: 8%;
+                height: calc(#{$border-width} * 1);
+                background-color: $secondary-color;
+                @include posA($top: 0%, $left: 50%, $delta_x: -50%, $delta_y: 0);
+            }
+            &--white {
+                color: $body-color;
+            }
+            &:before{
+                background-color: $body-color;
+                
+            }
+        }
+        &__content {
+            margin: 80px 0;
+        }
+        &__content--reverse {
+            margin: 140px 0;
+        }
+        &--bg{
+            @include bg;
+            padding: 100px 0;
+        }
+        
+
+        
+
+}
+
+.text {
+    &__title {
+        @include font($title-ff, 4.4rem, $secondary-color, 700, $lh: 1.6);
+        text-transform: uppercase;
+        margin: 0 0 20px 0;
+        @include clamp($line-clamp: 1);
+    }
+    &__subtitle {
+        @include font($title-ff, 2.4rem, $secondary-color, 400, $lh: 1);
+        text-transform: uppercase;
+        @include clamp($line-clamp: 1);
+    }
+    &__info {
+        @include font($body-ff, 1.8rem, $grey-color, 400, $lh: 1.6);
+        @include clamp($line-clamp: 3);
+    }
+    &__btn {
+        margin: 40px 0 60px 0;
+    }
+    &__link {
+        text-decoration: none;
+        @include font($btn-ff, 1.4rem, $secondary-color, 400, $lh: 1);
+        cursor: pointer;
+        @include tr;
+        @include hover {
+            color: $primary-color; 
+        } 
+    }
+}
+    
+.header {
+    position: relative;
+    background-color: $grey-color;
+    margin-bottom: 50px;
+    &:after{
+        content: '';
+        background-image:linear-gradient(45deg, rgba(85,183,255, .8) 0%, rgba(126,90,255,.8) 100%);
+        height: 100vh;
+        @include posA($top: null, $left: 0, $delta_x: null, $delta_y: null);
+        bottom: 0;
+        width: 100%;
+          
+    }
+    
+
+    &__bg{
+        @include posA;
+        min-width: 100%;
+        height: 100vh;
+        }
+}
+
+.header-slider{
+    height: 100vh;
+   z-index  : 1; 
+	&__heading{
+        @include flex ($align-items: center, $justify-content: center);
+		flex-direction: column;
+		align-items: center;
+		text-transform: uppercase;
+		// color: $body-color;
+		height: 100vh;
+
+	}
+	&__title{
+        @include font($title-ff, 7rem, $body-color, $fw: 700, $lh: 1.6);
+        letter-spacing: .05em;
+        z-index: 10;
+        margin: 0;
+	}
+	&__subtitle{
+        @include font($title-ff, 1.6rem, $body-color, $fw: 400, $lh: 1.6);
+        letter-spacing: .3em;
+        z-index: 100;
+    }
+    & .slick-dots {
+		position: absolute;
+		top: 35%;
+		right: 4%;
+	}
+}
+
+// h1 {
+//     @include font($title-ff, 8rem, $body-color, 700, $lh: .1);
+//     letter-spacing: .05em;
+//     margin-bottom: 0;
+// }
+
+// h2 {
+//     @include font($title-ff, 3.6rem, $body-color, 400);
+//     text-transform: capitalize;
+//     @media screen and (max-width: 414px) {
+//         @include font($title-ff, 2.9rem, $body-color, 400);
+//     } 
+// }
+
+// h3 {
+//     @include font($body-ff, 2rem, $body-color, 400, $lh: 1.3);
+//     text-transform: uppercase;
+// }
+
+
+
+
+
+.row {
+    @include flex ($align-items: center, $justify-content: space-between);
+    @media screen and (max-width: 768px) {
+        flex-wrap: wrap; 
+        justify-content: center;
+    }  
+    &--reverse {
+        flex-direction: row-reverse;
+    }
+}
+
+.col {
+    width: 100%;
+    &--1-2--larger{
+        max-width: 630px;      
+    }
+    &--1-2{
+        max-width: 500px;      
+    }
+    @media screen and (max-width: 907px) {
+        padding: 40px;
+    } 
+    @media screen and (max-width: 768px) {
+        padding: 20px;
+    }  
+}
+
+
+
+.img__wrap {
+    background-color: $grey-color;
+    position: relative;
+    width: 100%;
+    padding-top: 74%;
+    overflow: hidden;  
+    box-shadow: -140px -70px 0px 0px $blue-color;
+    &--reverse {
+        box-shadow: 140px -70px 0px 0px $primary-color;
+    }
+}
+
+.img{
+    min-width: 100%;
+    min-height: 100%;
+    @include posA;
+}
+
+.btn{
+    display: inline-block;
+    background-color: rgba($primary-color, .0);
+    border: $border-width solid rgba($secondary-color, 1);
+    @include font($btn-ff, 1.4rem, $secondary-color, 400, $lh: 1.8);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: .1em;
+    padding: 15px 40px;
+    text-align: center;
+    white-space: nowrap;
+    outline: none;
+    @include clamp($line-clamp: 1);
+    // margin: auto;
+    cursor: pointer;
+    @include tr;
+    @include hover {
+        background-color: rgba($primary-color, 1);
+        border-color: $primary-color;
+        color: $body-color;
+        transform: scale(.9) ;  
+    }   
+}
+
+.news-slider{
+	padding: 10px 0 50px;
+	display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+}
+
+.slide{
+	// width: 32%;
+}
+
+.card{
+    // width: calc(100% / 3 - 20px);
+    // width: 360px;
+    height: 515px;
+    background-color: $body-color;
+    outline: 1px solid red;
+    margin: 10px;
+    flex: 0 1 370px;
+    position: relative;
+    @include hover{
+        box-shadow: 0 0 1px $border-width $grey-color;
+        } 
+    &__link{
+        height: 100%;
+        outline: 1px solid orange;
+        display: block;
+        text-decoration: none;
+        padding: $space;  
+    }
+    &__title{
+        @include font($title-ff, 2.2rem, $secondary-color, 700, $lh: 1.5);
+        margin: 30px 0 20px 0;
+        text-transform: uppercase;
+        @include tr;
+        @include hover {
+            color: $primary-color; 
+        } 
+        // max-height: 125px;
+        @include clamp($line-clamp: 2);
+    }
+    &__text{
+        text-decoration: none;
+        @include font($body-ff, 1.8rem, $grey-color, 400, $lh: 1.6);
+        @include clamp($line-clamp: 2);
+        margin-bottom: 40px;
+    }
+  
+    &__img-wrap{
+        position: relative;
+        height: 240px;
+        overflow: hidden;
+        margin: -1 * $space -1 * $space $space;
+    }
+    &__img{
+        @include posA;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    &__author{
+        text-decoration: none;
+        @include posA ($top: null, $left: 0, $delta_x: 0, $delta_y: 0); 
+        bottom: -1.5%;
+        @include flex ($align-items: center, $justify-content: space-between);
+    }
+
+    &__author-img-wrap{
+        border-radius: 50%;
+        height: 60px;
+        width: 60px;
+        overflow: hidden;
+        position: relative;
+        margin: 30px 20px;
+    }
+
+    &__author-text{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__author-name{
+        @include font($title-ff, 1.8rem, $secondary-color, 400, $lh: 1.2);
+        text-transform: uppercase;
+        margin: 0 0 10px 0;
+    }
+
+    &__post-date{
+        @include font($btn-ff, 1.4rem, $blue-color, 400, $lh: 1.6);
+        // padding-right: 2rem;
+        margin-bottom: auto;
+    }
+}
+
+
+// .header-slider {
+// 	position: relative;
+// 	z-index: 1;
+// 	& .slick-dots {
+// 		position: absolute;
+// 		top: 35%;
+// 		right: 4%;
+// 	}
+// }
+
+.slick-vertical .slick-slide{border: none;}
+
+.slick-dots {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	& li {
+		width: 15px;
+		height: 15px;
+		border: 1px solid $body-color;
+		border-radius: 50%;
+		background-color: transparent;
+		margin-bottom: 40px;
+		cursor: pointer;
+		@include tr (all);
+
+		&:hover,
+		&:active,
+		&.slick-active {
+			background-color: $body-color;
+
+		}
+
+	}
+
+	& button {
+		display: none;
+
+	}
+}
+
+
+
+.news-slider {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	& .slick-dots {
+		display: flex;
+		flex-direction: row;
+		position: absolute;
+		left: 40%;
+		bottom: -3%;
+
+		& li {
+			margin: 0 30px 0 0;
+		}
+	}
+}
+
+.slide-news{
+	padding: 0 15px;
+}
+
+.slick-arrow {
+	position: absolute;
+	width: 5.5rem;
+	height: 5.5rem;
+	display: inline-block;
+	z-index: 1;
+	top: 45%;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	font-size: 0;
+	@include bg;
+	background-size: 100%;
+	background-image: url(../img/arrowDown.svg);
+	transition: .3s;
+	&.slick-prev {
+		left: -9%;
+		transform: rotate(-180deg);
+	}
+
+	&.slick-next {
+		right: -9%;
+
+	}
+
+	&:hover,
+	&:active {
+		background-color: $blue-color;
+		border-radius: 50%;
+	}
+}
+    
+
+
+
+
+
+.footer{
+    background-color: $secondary-color;
+    padding: 80px 0 60px;
+    &__title {
+        text-align: center;
+        @include flex ($align-items: center, $justify-content: center);
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+ 
+    &__text {
+        @include font($body-ff, 1.6rem, $body-color, 400, $lh: 1.6);
+        letter-spacing: .07em;
+        text-transform: capitalize;
+        @include clamp($line-clamp: 1);
+    }
+}
+
+
+

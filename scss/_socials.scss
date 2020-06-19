@@ -1,0 +1,28 @@
+.social {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    &__item {
+        display: inline-block;
+        margin: 10px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &__link {
+        color: $body-color;
+        text-decoration: none;
+        width: $social-size;
+        height: $social-size;
+        line-height: calc(#{$social-size} - 2 * #{$border-width});
+        display: inline-block;
+        border-radius: 50%;
+        border: $border-width solid rgba($body-color, .4);
+       
+        @include hover{
+            color: $primary-color;
+            background-color: $body-color;
+            border-color:rgba($body-color, 1);
+        }
+    }
+}

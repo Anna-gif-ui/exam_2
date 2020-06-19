@@ -1,0 +1,111 @@
+header {
+    // padding: 50px auto 40px;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+}
+
+.nav {
+    @include flex ($align-items: center, $justify-content: space-between);
+    @include font($ff: $body-ff, $fz: 1.6rem, $fc: $body-color, $fw: 800, $lh:1.4);
+    text-transform: uppercase;
+    vertical-align: middle; 
+    // @media screen and (max-width: 1024px){
+    //     @include posA($top: 0, $left: 50%, $delta-y: 0);
+    //     bottom: auto;
+    // }
+  
+    &__logo {
+        fill: $body-color; 
+        @include tr;
+        @include hover {
+            transform: scale(.9) ;  
+            fill: $primary-color;
+        }
+        @media screen and (max-width: 996px) {
+            margin-left: 15px;
+        } 
+
+    }
+    // &__list {
+    //     @include flex ($align-items: center, $justify-content: space-between);
+    //     text-transform: uppercase;
+    //     list-style: none;
+    //     text-decoration: none;
+        
+    // }
+}
+
+.toggler {
+    display: none;
+    @media screen and (max-width: 1024px) {
+    padding: 1em;
+    display: inline-block;
+    position: relative;
+    z-index: 20;
+    & svg {
+        fill: $body-color;
+    }
+    }
+}
+
+.menu {
+    display: inline-block;
+    margin: 0;
+    list-style: none;
+    @media screen and (max-width: 1024px){
+        @include flex ($align-items: center, $justify-content: center);
+        flex-direction: column;
+        text-align: center;
+    }
+    &__item{
+        display: inline-block;
+        margin-left: 1em;
+        &:not(:last-child){
+            margin-right: 4.5em;
+            @media screen and (max-width: 1024px){
+                margin-right: 0;
+            }
+        }
+        @include tr;
+        @include hover {
+        transform: scale(.8);  
+        }
+    }
+    &__link{
+        text-decoration: none;
+        @include font($btn-ff, 1.4rem, $body-color, 400, $lh: 1.6);
+        text-transform: uppercase;
+        position: relative;
+        &:before{
+            content: ' ';
+            width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			border: $border-width solid $body-color;
+            @include posA ($top: 50%, $left: -25%);
+            z-index: 1;
+            // @include tr;
+        }
+        &:hover::before{
+            @include hover;
+            opacity: 1;
+            background-color: $body-color;
+        }
+        // @media screen and (max-width: 1024px){
+        //     @include font($btn-ff, 2.5rem, $body-color, 400, $lh: 1.6);
+        //     padding: .25em 0;
+        //     display: inline-block;
+        //     @include hover {
+        //         color: rgba($body-color, .8);
+        //         }
+        //         .dropdown & {
+        //             padding: 1em;
+        //             }
+        // }
+    }
+}

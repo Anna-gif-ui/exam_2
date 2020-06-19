@@ -1,0 +1,51 @@
+@mixin font($ff: inherit, $fz: inherit, $fc: inherit, $fw: 400, $lh: 1.6) {
+    font-family: $ff;
+    font-weight: $fw;
+    font-size: $fz;
+    line-height: $lh;
+    color: $fc;
+}
+
+@mixin posA($top: 50%, $left: 50%, $delta_x: -50%, $delta_y: -50%) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate($delta_x, $delta_y);
+}
+
+@mixin bg($bg-pos:center, $bg-size:cover, $bg-repeat:no-repeat){
+    background-position: $bg-pos;
+    background-size: $bg-size;
+    background-repeat: $bg-repeat;
+}
+
+@mixin flex($align-items: center, $justify-content: center){
+    display: flex;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+@mixin clamp($line-clamp: 1){
+    display: -webkit-box;
+    -webkit-line-clamp: $line-clamp;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin tr($dur: .3s) {
+    transition: all $dur ease-in;
+}
+
+@mixin hover() {
+    @include tr;
+    &:hover,
+    &:focus,
+    &:active {
+        @content;
+    }
+}
+
+@mixin grad() {
+    background-image:linear-gradient(45deg, rgba(85,183,255, .8) 0%, rgba(126,90,255,.8) 100%);
+}
