@@ -31,13 +31,13 @@ header {
         } 
 
     }
-    // &__list {
-    //     @include flex ($align-items: center, $justify-content: space-between);
-    //     text-transform: uppercase;
-    //     list-style: none;
-    //     text-decoration: none;
+    &__list {
+        @include flex ($align-items: center, $justify-content: space-between);
+        text-transform: uppercase;
+        list-style: none;
+        text-decoration: none;
         
-    // }
+    }
 }
 
 .toggler {
@@ -51,6 +51,43 @@ header {
         fill: $body-color;
     }
     }
+}
+
+.dropdown {
+    position: relative;
+    background-color: transparent;
+    @include flex ($align-items: center, $justify-content: center);
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    padding: 0;
+    z-index: 2;
+    opacity: 1;
+    transform: translate(0%, 0%) scale(1);
+
+    @media screen and (max-width: 1024px){
+        will-change: transform;
+        padding: 50px 0 0;
+        @include posA($top: 0, $left: null, $delta_x: null, $delta_y: null);
+        right: 0; 
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        background-color: $primary-color;
+        opacity: 0;
+        transform-origin: calc(100% - 15px) 15px;
+        transform: translate(0%, 0%) scale(.1);
+        @include tr(.5s);
+        .menu-opened & {
+        z-index: 2;
+        opacity: 1;
+        transform: translate(0%, 0%) scale(1);
+        }
+    }
+}
+
+.menu-opened {
+    overflow: hidden;
 }
 
 .menu {
@@ -96,16 +133,16 @@ header {
             opacity: 1;
             background-color: $body-color;
         }
-        // @media screen and (max-width: 1024px){
-        //     @include font($btn-ff, 2.5rem, $body-color, 400, $lh: 1.6);
-        //     padding: .25em 0;
-        //     display: inline-block;
-        //     @include hover {
-        //         color: rgba($body-color, .8);
-        //         }
-        //         .dropdown & {
-        //             padding: 1em;
-        //             }
-        // }
+        @media screen and (max-width: 1024px){
+            @include font($btn-ff, 2.5rem, $body-color, 400, $lh: 1.6);
+            padding: .25em 0;
+            display: inline-block;
+            @include hover {
+                color: rgba($body-color, .8);
+                }
+                .dropdown & {
+                    padding: 1em;
+                }
+        }
     }
 }

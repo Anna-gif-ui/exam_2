@@ -23,25 +23,25 @@
                     </svg>
                 </a>
                 <ul class="nav__list menu dropdown">
-                    <li class="menu__item"><a href="#what-we-do" class="menu__link">About Us</a></li>
-                    <li class="menu__item"><a href="#gallery" class="menu__link">projects</a></li>
-                    <li class="menu__item"><a href="#news" class="menu__link">news</a></li>
-                    <li class="menu__item"><a href="#contact" class="menu__link">contact</a></li>
+                    <li class="menu__item"><a href="#what-we-do" class="menu__link" onclick="closeMenu()">About Us</a></li>
+                    <li class="menu__item"><a href="#gallery" class="menu__link" onclick="closeMenu()">projects</a></li>
+                    <li class="menu__item"><a href="#news" class="menu__link" onclick="closeMenu()">news</a></li>
+                    <li class="menu__item"><a href="#contact" class="menu__link" onclick="closeMenu()">contact</a></li>
                 </ul>
                 <ul class="nav__social social">
                     <li class="social__item">
-                        <a href="#" class="social__link" rel="noopener noreferrer" target="blank"> 
+                        <a href="#" class="social__link"> 
                             <i class="fab fa-facebook-f"></i>
                         </a>
                     </li>
                     <li class="social__item">
-                        <a href="#" class="social__link" rel="noopener noreferrer" target="blank">
+                        <a href="#" class="social__link">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </li>
                    
                     <li class="social__item">
-                        <a href="#" class="social__link" rel="noopener noreferrer" target="blank">
+                        <a href="#" class="social__link">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </li>
@@ -50,159 +50,119 @@
         </div>
     </header>
 <main>
-    <!-- class="section section--cover section--full-screen -->
-    <section id="cover" class="section header">
-        
+    <section id="cover" class="header">      
         <div class="header-slider">           
             <div class="slide">
-                <picture>
-                    <source 
-                        type="image/jpg"
-                        media="(min-width: 992px)" 
-                        srcset="img/cover992.jpg">
-                    <source 
-                        type="image/jpg"
-                        media="(min-width: 720px)" 
-                        srcset="img/cover720.jpg">
-                    <source 
-                        type="image/jpg"
-                        media="(min-width: 320px)" 
-                        srcset="img/cover320.jpg">
-  
-                    <img src="./img/cover.jpg" alt="Bcg" class="header__bg">
-                </picture>
-                <div class="header-slider__heading">
-                    <h1 class="header-slider__title">Simple & mordern</h1>
-                    <span class="header-slider__subtitle">We make the world's beautiful every day</span>
-                </div>
+                <div class="cover">
+                    <picture class="cover__pic">
+                            <source 
+                                type="image/jpg"
+                                media="(min-width: 992px)" 
+                                srcset="img/cover992.jpg">
+                            <source 
+                                type="image/jpg"
+                                media="(min-width: 720px)" 
+                                srcset="img/cover720.jpg">
+                            <source 
+                                type="image/jpg"
+                                media="(min-width: 320px)" 
+                                srcset="img/cover320.jpg">
           
-            </div> 
-            <!-- <div class="slide">
-                <picture>
-                    <source 
-                        type="image/jpg"
-                        media="(min-width: 992px)" 
-                        srcset="img/cover992.jpg">
-                    <source 
-                        type="image/jpg"
-                        media="(min-width: 720px)" 
-                        srcset="img/cover720.jpg">
-                    <source 
-                        type="image/jpg"
-                        media="(min-width: 320px)" 
-                        srcset="img/cover320.jpg">
-  
-                    <img src="./img/cover.jpg" alt="Bcg" class="header__bg">
-                </picture>
-                <div class="header-slider__heading">
-                    <h1 class="header-slider__title">3 Slide</h1>
-                    <span class="header-slider__subtitle">We make the world's beautiful every day</span>
+                            <img src="./img/cover.jpg" alt="Bcg" class="header__bg">
+                    </picture> 
+                    <div class="cover__heading">
+                        <h1 class="cover__title">Simple & mordern</h1>
+                        <span class="cover__subtitle">We make the world's beautiful every day</span>
+                    </div>
                 </div>
             </div> 
             <div class="slide">
-                <picture>
-                    <source 
-                        type="image/jpg"
-                        media="(min-width: 992px)" 
-                        srcset="img/cover992.jpg">
-                    <source 
-                        type="image/jpg"
-                        media="(min-width: 720px)" 
-                        srcset="img/cover720.jpg">
-                    <source 
-                        type="image/jpg"
-                        media="(min-width: 320px)" 
-                        srcset="img/cover320.jpg">
-  
-                    <img src="./img/cover.jpg" alt="Bcg" class="header__bg">
-                </picture>
-                <div class="header-slider__heading">
-                    <h1 class="header-slider__title">4 slide</h1>
-                    <span class="header-slider__subtitle">We make the world's beautiful every day</span>
+                <div class="cover">
+                    <picture class="cover__pic">
+                            <source 
+                                type="image/jpg"
+                                media="(min-width: 992px)" 
+                                srcset="img/cover992.jpg">
+                            <source 
+                                type="image/jpg"
+                                media="(min-width: 720px)" 
+                                srcset="img/cover720.jpg">
+                            <source 
+                                type="image/jpg"
+                                media="(min-width: 320px)" 
+                                srcset="img/cover320.jpg">
+          
+                            <img src="./img/cover.jpg" alt="Bcg" class="header__bg">
+                    </picture> 
+                    <div class="cover__heading">
+                        <h1 class="cover__title">Simple & mordern</h1>
+                        <span class="cover__subtitle">We make the world's beautiful every day</span>
+                    </div>
                 </div>
             </div> 
             <div class="slide">
-                <picture>
-                    <source 
-                        type="image/jpg"
-                        media="(min-width: 992px)" 
-                        srcset="img/cover992.jpg">
-                    <source 
-                        type="image/jpg"
-                        media="(min-width: 720px)" 
-                        srcset="img/cover720.jpg">
-                    <source 
-                        type="image/jpg"
-                        media="(min-width: 320px)" 
-                        srcset="img/cover320.jpg">
-  
-                    <img src="./img/cover.jpg" alt="Bcg" class="header__bg">
-                </picture>
-                <div class="header-slider__heading">
-                    <h1 class="header-slider__title">5 slide</h1>
-                    <span class="header-slider__subtitle">We make the world's beautiful every day</span>
+                <div class="cover">
+                    <picture class="cover__pic">
+                            <source 
+                                type="image/jpg"
+                                media="(min-width: 992px)" 
+                                srcset="img/cover992.jpg">
+                            <source 
+                                type="image/jpg"
+                                media="(min-width: 720px)" 
+                                srcset="img/cover720.jpg">
+                            <source 
+                                type="image/jpg"
+                                media="(min-width: 320px)" 
+                                srcset="img/cover320.jpg">
+          
+                            <img src="./img/cover.jpg" alt="Bcg" class="header__bg">
+                    </picture> 
+                    <div class="cover__heading">
+                        <h1 class="cover__title">Simple & mordern</h1>
+                        <span class="cover__subtitle">We make the world's beautiful every day</span>
+                    </div>
                 </div>
             </div> 
-            <div class="slide">
-                <picture>
-                    <source 
-                        type="image/jpg"
-                        media="(min-width: 992px)" 
-                        srcset="img/cover992.jpg">
-                    <source 
-                        type="image/jpg"
-                        media="(min-width: 720px)" 
-                        srcset="img/cover720.jpg">
-                    <source 
-                        type="image/jpg"
-                        media="(min-width: 320px)" 
-                        srcset="img/cover320.jpg">
-  
-                    <img src="./img/cover.jpg" alt="Bcg" class="header__bg">
-                </picture>
-                <div class="header-slider__heading">
-                    <h1 class="header-slider__title">5 slide</h1>
-                    <span class="header-slider__subtitle">We make the world's beautiful every day</span>
-                </div>
-            </div>   -->
+        </div>  
 
-            <a class="section__link" href="#about">
-                <i class="section__link__icon fas fa-chevron-down"></i>
-            </a>
+        <a class="scroll" href="#what-we-do">
+            <i class="fas fa-chevron-down"></i>
+        </a>
     </section>
-    <section id="what-we-do" class="section">
+
+    <section id="what-we-do" class="section section--office">
         <div class="container">
             <h2 class="section__title">what we do</h2>
-            <div class="section__content">
-                <div class="row"> 
-                    <div class="col col--1-2--larger">
-                        <div class="section__img">
-                            <div class="img__wrap">
-                                <img class="img" src="./img/whatwedo1.jpg" alt="pic1">
-                            </div>
+            
+                <div class="office"> 
+                    
+                    <div class="office__img">
+                        <div class="img__wrap">
+                            <img class="img" src="./img/whatwedo1.jpg" alt="pic1">
                         </div>
-                      
-                    </div>
-                    <div class="col col--1-2">
-                        <div class="section__text text">
-                            <span class="text__subtitle">One World</span>
-                            <h2 class="text__title">Trade Center</h2>
-                            <p class="text__info">Increasing prosperity in our lives can be accomplished by having the right frame of mind. The truth is, our thoughts are very powerful.</p>
-                            <button class="btn text__btn">more details</button>
+                    </div> 
+                    
+                    <div class="office__info">
+                        
+                            <span class="office__subtitle">One World</span>
+                            <h2 class="office__title">Trade Center</h2>
+                            <p class="office__text">Increasing prosperity in our lives can be accomplished by having the right frame of mind. The truth is, our thoughts are very powerful.</p>
+                            <button class="btn office__btn">more details</button>
     
-                            <a href="" target="_blank" rel="noopener noreferrer" class="text__link">	
-                                <span class="text__link__sign">
+                            <a href="#newYork" data-address='New York City, United States' class="office__link">	
+                                <span class="office__link__sign">
                                     <i class="fas fa-map-marker-alt"></i>
                                 New York City, United States - 1776 feet
                                 </span>
                             </a>
-                        </div>
+                       
                     </div>
                 </div>
-            </div>
-            <div class="section__content section__content--reverse">
-                <div class="row row--reverse"> 
-                    <div class="col col--1-2--larger">
+            
+            
+                <div class="office office--reverse"> 
+                    <div class="office__img">
                         <div class="section__img">
                             <div class="img__wrap img__wrap--reverse">
                                 <img class="img" src="./img/whatwedo2.jpg" alt="pic1">
@@ -210,23 +170,23 @@
                         </div>
                       
                     </div>
-                    <div class="col col--1-2">
-                        <div class="section__text text">
-                            <span class="text__subtitle">International</span>
-                            <h2 class="text__title">Commerce Centre</h2>
-                            <p class="text__info">Successful businesses have many things in common, today we’ll look at the big ‘R’ of recognition and how a digital advertising network may help.</p>
-                            <button class="btn text__btn">more details</button>
+                    <div class="office__info">
+                        
+                            <span class="office__subtitle">International</span>
+                            <h2 class="office__title">Commerce Centre</h2>
+                            <p class="office__text">Successful businesses have many things in common, today we’ll look at the big ‘R’ of recognition and how a digital advertising network may help.</p>
+                            <button class="btn office__btn">more details</button>
     
-                            <a href="" target="_blank" rel="noopener noreferrer" class="text__link">	
-                                <span class="text__link__sign">
+                            <a href="#hongKong" data-address='Hong Kong, China' class="office__link">	
+                                <span class="office__link__sign">
                                     <i class="fas fa-map-marker-alt"></i>
                                 Hong Kong - 1588 Feet
                                 </span>
                             </a>
-                        </div>
+                        
                     </div>
                 </div>
-            </div>
+           
         </div>
     </section>
 
@@ -237,7 +197,7 @@
             <div class="news-slider">
                 <div class="slide-news">
                     <div class="card">
-                        <a href="#" class="card__link" rel="noopener noreferrer" target="blank">
+                        <a href="#" class="card__link">
                             <div class="card__img-wrap">
                                 <img src="./img/news1.jpg" alt="" class="card__img">
                             </div>
@@ -261,22 +221,22 @@
                 </div>
                 <div class="slide-news">
                     <div class="card">
-                        <a href="#" class="card__link" rel="noopener noreferrer" target="blank">
+                        <a href="#" class="card__link">
                             <div class="card__img-wrap">
-                                <img src="./img/news1.jpg" alt="" class="card__img">
+                                <img src="./img/news2.jpg" alt="news2" class="card__img">
                             </div>
-                            <h4 class="card__title">See The Unmatched Beauty Of The Great. Lakes.</h4>
-                            <p class="card__text">Free directories: directories are perfect for </p>
+                            <h4 class="card__title">Effective Advertising Pointers.</h4>
+                            <p class="card__text">Having a home based business is a wonderful asset to your life...</p>
                         </a>
-                        <a href="#news" class="card__author">
+                        <a href="" class="card__author">
                             
                                 <div class="card__author-img-wrap">
-                                    <img src="./img/news1author.jpg" alt="Isaac Dunn" class="card__img">
+                                    <img src="./img/news2author.jpg" alt="Idominic freeman" class="card__img">
                                 </div>
                             
                             <div class="card__author-text">
-                                <h3 class="card__author-name">Isaac Dunn</h3>
-                                <div class="card__post-date">09 Feb 2017</div>
+                                <h3 class="card__author-name">dominic freeman</h3>
+                                <div class="card__post-date">24 Apr 2017</div>
                             </div>
                         </a>
 
@@ -285,22 +245,22 @@
                 </div>
                 <div class="slide-news">
                     <div class="card">
-                        <a href="#" class="card__link" rel="noopener noreferrer" target="blank">
+                        <a href="#" class="card__link">
                             <div class="card__img-wrap">
-                                <img src="./img/news1.jpg" alt="" class="card__img">
+                                <img src="./img/news3.jpg" alt="news3" class="card__img">
                             </div>
-                            <h4 class="card__title">See The Unmatched Beauty Of The Great. Lakes.</h4>
-                            <p class="card__text">Free directories: directories are perfect for </p>
+                            <h4 class="card__title">Hypnotize Yourself Into The Ghost.</h4>
+                            <p class="card__text">There are many things that are important to catalog design....</p>
                         </a>
                         <a href="#news" class="card__author">
                             
                                 <div class="card__author-img-wrap">
-                                    <img src="./img/news1author.jpg" alt="Isaac Dunn" class="card__img">
+                                    <img src="./img/news3author.jpg" alt="Alice Ward" class="card__img">
                                 </div>
                             
                             <div class="card__author-text">
-                                <h3 class="card__author-name">Isaac Dunn</h3>
-                                <div class="card__post-date">09 Feb 2017</div>
+                                <h3 class="card__author-name">Alice Ward</h3>
+                                <div class="card__post-date">30 Dec 2017</div>
                             </div>
                         </a>
 
@@ -309,14 +269,14 @@
                 </div>
                 <div class="slide-news">
                     <div class="card">
-                        <a href="#" class="card__link" rel="noopener noreferrer" target="blank">
+                        <a href="#" class="card__link">
                             <div class="card__img-wrap">
                                 <img src="./img/news1.jpg" alt="" class="card__img">
                             </div>
                             <h4 class="card__title">See The Unmatched Beauty Of The Great. Lakes.</h4>
                             <p class="card__text">Free directories: directories are perfect for </p>
                         </a>
-                        <a href="#news" class="card__author">
+                        <a href="#" class="card__author">
                             
                                 <div class="card__author-img-wrap">
                                     <img src="./img/news1author.jpg" alt="Isaac Dunn" class="card__img">
@@ -327,47 +287,64 @@
                                 <div class="card__post-date">09 Feb 2017</div>
                             </div>
                         </a>
-
-                       
                     </div>
                 </div>
         </div>
     </section>
+
     <section id="gallery" class="section" >
-        <h2 class="section__title">what we do</h2>
+        <h2 class="section__title">gallery</h2>
         <div class="container">
             <div class="grid">
-                <div class="grid__item">
-                    <img src="./img/gallerylarge.jpg" alt="">
-                </div>
-                <div class="grid__item">
-                    <img src="./img/gallery1.jpg" alt=""> 
-                </div>
-                <div class="grid__item">
-                    <img src="./img/gallery2.jpg" alt="">
-                </div>
-                <div class="grid__item">
-                    <img src="./img/gallery3.jpg" alt="">
-                </div>
-                <div class="grid__item">
-                    <img src="./img/gallery4.jpg" alt="">
-                </div>
+                <a href="#" class="grid__item gallery">
+                    <img class="grid__item__img gallery__img" src="./img/gallerylarge.jpg" alt="">
+                </a>
+                <a href="#" class="grid__item">
+                    <img class="grid__item__img" src="./img/gallery1.jpg" alt=""> 
+                </a>
+                <a href="#" class="grid__item">
+                    <img class="grid__item__img" src="./img/gallery2.jpg" alt="">
+                </a>
+                <a href="#" class="grid__item">
+                    <img class="grid__item__img" src="./img/gallery3.jpg" alt="">
+                </a>
+                <a href="#" class="grid__item">
+                    <img class="grid__item__img" src="./img/gallery4.jpg" alt="">
+                </a>
             </div>
-            <button class="btn btn--centered">more details</button>
+            <div class="btn--centered">
+                <a href="#" class="btn" href="#">see more</a>
+            </div>
+        </div>  
+    </section>
+    
+    <section class="section section--map" >
+        <div class="map-wrap">
+            <div id="map"></div>
+        </div>
+
+        <div class="contact container container--footer" style="background-image: linear-gradient( 90deg, rgba(255,255,255, .95) 0%, rgba(255,255,255, .97) 100%), url(./img/bgform.png);">
+            <h2 class="section__title title--contact">get in touch</h2>
+            <div class="contact__wrap" >
+                <div class="contact__links">
+                    <a href="#" class="contact__link"><i class="fas fa-map-marker-alt"></i> 91 Nolan Extensions Suite 670</a>
+                    <a href="tel:+0013568682454" class="contact__link"><i class="fas fa-phone-alt"></i> +001 356-868-2454</a>
+                    <a href="mailto:gahuy93@gmail.com" class="contact__link"><i class="fas fa-envelope"></i> gahuy93@gmail.com</a>
+                    <span class="contact__link"><i class="far fa-clock"></i> From 07:05AM to 07:30PM</span>
+                </div>
+                <form class="contact__form" method="POST" autocomplete="off">
+                    <input type="text" name="name" placeholder="Full Name" class="contact__input contact__input--text" minlength="3" placeholder="Your name" required>
+                    <input type="email" name="email" placeholder="Email" class="contact__input contact__input--text" minlength="10" placeholder="Your email" required>
+                    <button type="submit" id="contact-form-submit" class="contact__input contact__input--btn btn">submit</button>
+                </form>
+            </div>
         </div>
     </section>
-    <section>
-        <div class="container"></div>
-    </section>
-    <section>
-        <div class="container"></div>
-    </section> 
-    
     
 </main>
 <footer id="contact" class="footer" style="background-image: linear-gradient( 45deg, rgba(85,183,255, .93) 0%, rgba(126,90,255, .96) 100%), url(img/bgfooter.jpg);">
        <div class="container container--footer">
-            <div class="footer__sign row">
+            <div class="footer__sign">
                 <a href="#" class="nav__logo">
                     <svg width="241" height="54">
                         <use xlink:href="#logo">
@@ -375,18 +352,18 @@
                 </a>
                 <ul class="nav__social social">
                     <li class="social__item">
-                        <a href="#" class="social__link" rel="noopener noreferrer" target="blank"> 
+                        <a href="#" class="social__link"> 
                             <i class="fab fa-facebook-f"></i>
                         </a>
                     </li>
                     <li class="social__item">
-                        <a href="#" class="social__link" rel="noopener noreferrer" target="blank">
+                        <a href="#" class="social__link">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </li>
                    
                     <li class="social__item">
-                        <a href="#" class="social__link" rel="noopener noreferrer" target="blank">
+                        <a href="#" class="social__link">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </li>
@@ -409,20 +386,13 @@
         <path d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/>
         <path d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/>
     </symbol>
-    <!-- width="8px" height="5px" -->
-    <!-- <symbol id="scroll" viewBox="0 0 8 6">
-        <path d="M4.125,4.651 L0.750,1.276 L1.594,0.432 L7.500,6.339 L13.406,0.362 L14.250,1.206 L7.500,8.026 L6.656,7.183 L4.125,4.651 Z"/>
-    </symbol> -->
-    <!-- width="20px" height="22px" -->
-    <symbol id="search" viewBox="0 0 20 22">
-        <path d="M19.993,19.980 L18.949,21.027 L13.182,15.243 C12.850,15.542 12.486,15.809 12.088,16.041 C11.690,16.274 11.276,16.473 10.845,16.639 C10.414,16.806 9.958,16.931 9.478,17.013 C8.997,17.096 8.525,17.138 8.061,17.138 C6.934,17.138 5.881,16.922 4.904,16.490 C3.926,16.058 3.072,15.476 2.344,14.745 C1.614,14.014 1.043,13.158 0.629,12.177 C0.214,11.197 0.007,10.158 0.007,9.061 C0.007,7.931 0.214,6.876 0.629,5.895 C1.043,4.915 1.614,4.059 2.344,3.327 C3.072,2.596 3.926,2.023 4.904,1.607 C5.881,1.192 6.934,0.984 8.061,0.984 C9.155,0.984 10.190,1.192 11.168,1.607 C12.146,2.023 12.999,2.596 13.729,3.327 C14.457,4.059 15.038,4.915 15.469,5.895 C15.899,6.876 16.115,7.931 16.115,9.061 C16.115,9.527 16.073,10.000 15.991,10.482 C15.908,10.964 15.783,11.421 15.618,11.853 C15.452,12.285 15.253,12.700 15.021,13.099 C14.789,13.498 14.524,13.864 14.226,14.196 L19.993,19.980 L19.993,19.980 ZM0.852,9.061 C0.852,10.058 1.034,10.989 1.399,11.853 C1.763,12.717 2.277,13.482 2.940,14.146 C3.603,14.812 4.374,15.335 5.252,15.717 C6.130,16.099 7.067,16.290 8.061,16.290 C9.055,16.290 9.983,16.099 10.845,15.717 C11.707,15.335 12.469,14.812 13.132,14.146 C13.795,13.482 14.317,12.717 14.698,11.853 C15.079,10.989 15.270,10.058 15.270,9.061 C15.270,8.064 15.079,7.125 14.698,6.244 C14.317,5.364 13.795,4.591 13.132,3.926 C12.469,3.261 11.707,2.746 10.845,2.380 C9.983,2.015 9.055,1.831 8.061,1.831 C7.067,1.831 6.130,2.015 5.252,2.380 C4.374,2.746 3.603,3.261 2.940,3.926 C2.277,4.591 1.763,5.364 1.399,6.244 C1.034,7.125 0.852,8.064 0.852,9.061 L0.852,9.061 Z"/>
-    </symbol>
-
 </svg> 
-
 
 <script src="./js/jquery.min.js"></script>
 <script src="./js/slick.min.js"></script>
+<!-- <script src="js/headroom.min.js"></script> -->
 <script src="js/scripts.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApYpP_-jnce-CeyANtKPiOQI2edwXsFWk&callback=initMap&language=en"></script>
+
 </body>
 </html>

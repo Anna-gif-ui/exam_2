@@ -7,8 +7,6 @@
 @import 'slick';
 @import 'slider';
 
-
-
 * {
     box-sizing: border-box;
 }
@@ -22,92 +20,120 @@ body {
     @include font($body-ff, 1.6rem, $body-color, $lh: 1.6);
     padding: 0;
     margin: 0;
-
 }
 
 .container {
-    outline: 1px solid red;
     margin: 0 auto;
     max-width: $container-width;
     width: 100%;
     &--footer {
         max-width: 770px;
+    }  
+    @media screen and (max-width: 992px) {
+        max-width: 750px;
     }
-    // padding: 15px;
-    // @media screen and (max-width: 992px) {
-    //     max-width: 750px;
-    // }
 }
 
 .section {
     overflow: hidden;  
     position: relative;
     padding: 60px 0;
-        &__link {
-            @include posA ($top: auto, $left: 50%, $delta_y: 0); 
-            text-align: center;
-            bottom: 10%;
-            width: $social-size;
-            height: $social-size;
-            line-height: calc(#{$social-size} - 2 * #{$border-width});
-            display: inline-block;
-            border-radius: 50%;
-            border: $border-width solid rgba($body-color, .4); 
-            z-index: 20;      
-            @include hover{
-                background-color: $body-color;
-                border-color:rgba($body-color, 1);
-            }  
-            &__icon{
-                color: $body-color; 
-                @include hover{
-                    color: $primary-color; 
-                }
-            }        
-        }
-        &__title {
-            @include font($title-ff, 4.4rem, $secondary-color, 700, $lh: 2);
-            text-transform: uppercase;
-            @include clamp;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-            position: relative;
-            &:before{
-                content: '';
-                display: block;
-                width: 8%;
-                height: calc(#{$border-width} * 1);
-                background-color: $secondary-color;
-                @include posA($top: 0%, $left: 50%, $delta_x: -50%, $delta_y: 0);
-            }
-            &--white {
-                color: $body-color;
-                &:before{
-                    background-color: $body-color;
-                    
-                }
-            }
-            
-        }
-        &__content {
-            margin: 80px 0;
-        }
-        &__content--reverse {
-            margin: 140px 0;
-        }
-        &--bg{
-            @include bg;
-            padding: 60px 0 150px;
-            min-height: 100vh;
-        }
-        
 
+    &__title {
+        @include font($title-ff, 4.4rem, $secondary-color, 700, $lh: 2);
+        text-transform: uppercase;
+        @include clamp;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 40px;
+        position: relative;
+        &:before{
+            content: '';
+            display: block;
+            width: 8%;
+            height: calc(#{$border-width} * 1);
+            background-color: $secondary-color;
+            @include posA($top: 0%, $left: 50%, $delta_x: -50%, $delta_y: 0);
+        }
+        &--white {
+            color: $body-color;
+            &:before{
+                background-color: $body-color;   
+            }
+        }
         
+        
+    }
+    &--office {
+        margin: 0 0 100px;
+        padding: 0;
+    }
+    &--bg{
+        @include bg;
+        padding: 60px 0 150px;
+        min-height: 100vh;
+    }
+    &--map{
+        position: relative;
+        overflow: visible;
+        padding: 0;
+    }
 
 }
 
-.text {
+.header {
+    position: relative;
+    background-color: $grey-color;
+    margin-bottom: 50px;
+    height: 100vh;
+    &__bg{
+        @include posA;
+        min-width: 100%;
+        height: 100vh;
+    }
+}
+
+.scroll {
+    @include posA ($top: auto, $left: 50%, $delta_y: 0); 
+    text-align: center;
+    bottom: 10%;
+    width: $social-size;
+    height: $social-size;
+    line-height: calc(#{$social-size} - 2 * #{$border-width});
+    display: inline-block;
+    border-radius: 50%;
+    border: $border-width solid rgba($body-color, .4); 
+    z-index: 20;  
+    color: $body-color;           
+    @include hover {
+        color: $primary-color;
+        background-color: $body-color;
+        border-color:rgba($body-color, 1);
+    }  
+}
+
+.office {
+    margin-top: 100px;
+    width: 100%;
+    @include flex ($align-items: center, $justify-content: space-between);
+    // @media screen and (max-width: 768px) {
+    //     flex-wrap: wrap; 
+    //     justify-content: center;
+    // }  
+    &--reverse {
+        flex-direction: row-reverse;
+        margin-top: 150px;
+    }
+    &__img{
+        max-width: 630px; 
+        width: 100%;
+        // width: 54%;
+    }
+    &__info{
+        max-width: 500px;
+        width: 100%;
+        // width: 41%;
+    }
     &__title {
         @include font($title-ff, 4.4rem, $secondary-color, 700, $lh: 1.6);
         text-transform: uppercase;
@@ -119,7 +145,7 @@ body {
         text-transform: uppercase;
         @include clamp($line-clamp: 1);
     }
-    &__info {
+    &__text {
         @include font($body-ff, 1.8rem, $grey-color, 400, $lh: 1.6);
         @include clamp($line-clamp: 3);
     }
@@ -130,84 +156,13 @@ body {
         text-decoration: none;
         @include font($btn-ff, 1.4rem, $secondary-color, 400, $lh: 1);
         cursor: pointer;
+        display: block;
         @include tr;
         @include hover {
             color: $primary-color; 
         } 
     }
 }
-    
-.header {
-    position: relative;
-    background-color: $grey-color;
-    margin-bottom: 50px;
-    &:after{
-        content: '';
-        background-image:linear-gradient(45deg, rgba(85,183,255, .8) 0%, rgba(126,90,255,.8) 100%);
-        height: 100vh;
-        @include posA($top: null, $left: 0, $delta_x: null, $delta_y: null);
-        bottom: 0;
-        width: 100%;
-          
-    }
-
-    &__bg{
-        @include posA;
-        min-width:100%;
-        height: 100vh;
-        }
-}
-
-// h1 {
-//     @include font($title-ff, 8rem, $body-color, 700, $lh: .1);
-//     letter-spacing: .05em;
-//     margin-bottom: 0;
-// }
-
-// h2 {
-//     @include font($title-ff, 3.6rem, $body-color, 400);
-//     text-transform: capitalize;
-//     @media screen and (max-width: 414px) {
-//         @include font($title-ff, 2.9rem, $body-color, 400);
-//     } 
-// }
-
-// h3 {
-//     @include font($body-ff, 2rem, $body-color, 400, $lh: 1.3);
-//     text-transform: uppercase;
-// }
-
-
-
-
-
-.row {
-    @include flex ($align-items: center, $justify-content: space-between);
-    @media screen and (max-width: 768px) {
-        flex-wrap: wrap; 
-        justify-content: center;
-    }  
-    &--reverse {
-        flex-direction: row-reverse;
-    }
-}
-
-.col {
-    width: 100%;
-    &--1-2--larger{
-        max-width: 630px;      
-    }
-    &--1-2{
-        max-width: 500px;      
-    }
-    @media screen and (max-width: 907px) {
-        padding: 40px;
-    } 
-    @media screen and (max-width: 768px) {
-        padding: 20px;
-    }  
-}
-
 
 
 .img__wrap {
@@ -240,19 +195,16 @@ body {
     text-align: center;
     white-space: nowrap;
     outline: none;
-    @include clamp($line-clamp: 1);
-    // margin: auto;
     cursor: pointer;
     @include tr;
     @include hover {
         background-color: rgba($primary-color, 1);
         border-color: $primary-color;
-        color: $body-color;
-        // transform: scale(.9) ;  
+        color: $body-color; 
     } 
     &--centered {
+        margin: 60px 0; 
         text-align: center;  
-        margin-top: 30px; 
     }
     &--icon {
         padding: 0;
@@ -271,23 +223,20 @@ body {
 }
 
 .card{
-    // width: calc(100% / 3 - 20px);
-    // width: 360px;
     height: 515px;
     background-color: $body-color;
-    outline: 1px solid red;
     margin: 10px;
     flex: 0 1 370px;
     position: relative;
     @include hover{
-        box-shadow: 0 0 1px $border-width $grey-color;
-        } 
+        box-shadow: 0 0 $border-width $grey-color;
+    } 
     &__link{
         height: 100%;
-        outline: 1px solid orange;
         display: block;
         text-decoration: none;
-        padding: $space;  
+        padding: $space;
+        outline: none;
     }
     &__title{
         @include font($title-ff, 2.2rem, $secondary-color, 700, $lh: 1.5);
@@ -297,7 +246,6 @@ body {
         @include hover {
             color: $primary-color; 
         } 
-        // max-height: 125px;
         @include clamp($line-clamp: 2);
     }
     &__text{
@@ -322,8 +270,10 @@ body {
     &__author{
         text-decoration: none;
         @include posA ($top: null, $left: 0, $delta_x: 0, $delta_y: 0); 
-        bottom: -1.5%;
+        bottom: -3%;
         @include flex ($align-items: center, $justify-content: space-between);
+        margin: 30px 0 10px 0;
+        outline: none;  
     }
 
     &__author-img-wrap{
@@ -337,7 +287,7 @@ body {
 
     &__author-text{
         height: 100%;
-        @include flex ($align-items: center, $justify-content: center);
+        @include flex ($align-items: left, $justify-content: center);
         flex-direction: column;
     }
 
@@ -345,6 +295,9 @@ body {
         @include font($title-ff, 1.8rem, $secondary-color, 400, $lh: 1.2);
         text-transform: uppercase;
         margin: 0 0 10px 0;
+        @include hover{
+        color: $primary-color;
+        }
     }
 
     &__post-date{
@@ -364,25 +317,35 @@ body {
         position: relative;
         padding-top: 70%;
         overflow: hidden;
-        @include tr;
-        @include hover{
-        box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.8);
-        // .grid__item img{
-        //      transform: translate(-50%, -50%) scale(1.4);
-        // }
+        cursor: pointer;
+        &__img {
+            min-width: 100%;
+            min-height: 100%;
+            @include posA;
+            object-fit: cover;
+            object-position: center;
+            @include tr;
         }
         &:after {
-            position: absolute;
-            content: '';
-            background: rgba(233, 79, 67, 0.62);
+            content: url(../img/globe.svg);
+            @include posA ($top: 45%, $left: 50%, $delta_x: -50%, $delta_y: -50%); 
             display: block;
-            width: 100%;
-            height: 100%;
+            width: 30%;
+            height: 30%;
             z-index: 1;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: .2s;
+            opacity: 0; 
+            @include tr;
+        }
+        @include hover{  
+        img{
+            @include tr;
+             transform: translate(-50%, -50%) scale(1.2);   
+        }
+        &:hover:after {
+            @include tr;
+            opacity: 1;
+        }
+      
         }
         &:nth-child(1) {
             grid-row-start: 1;
@@ -392,30 +355,126 @@ body {
     }
 }
 
-img {
-    position: absolute;
-    top: 0;
-    left: 0;
+
+#map{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    height: 100vh;
 }
+
+.map-wrap{
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.title--contact{
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+    &:before{
+        width: 15%;
+    }
+}
+
+.contact{
+    z-index: 10;
+    @include posA ($top: auto, $left: 50%, $delta_x: -50%, $delta_y: 40%); 
+    background: rgba($body-color, .5);
+    bottom: 10%;
+    overflow: hidden;
+    padding: 40px 60px 40px 60px;
+    @include bg ($bg-pos:center bottom, $bg-size:contain, $bg-repeat:no-repeat);
+    &__wrap{ 
+        position: relative;
+        @include flex ($align-items: center, $justify-content: space-between);
+    }
+
+    &__links{
+        @include flex ($align-items: left, $justify-content: space-between);
+        flex-direction: column;
+        width: 48%;
+        
+    }
+
+    &__form{
+        @include flex ($align-items: left, $justify-content: space-between);
+        flex-direction: column;
+        width: 48%;
+    }
+
+
+    &__link{
+        @include font($btn-ff, 1.8rem, $secondary-color, 400, $lh: 1.6);
+        max-height: 34px;
+        overflow: hidden;
+        margin: 10px 10px 15px 15px;
+        text-decoration: none;
+        cursor: pointer;
+        & i{
+            color: $primary-color ;
+        }
+
+        @include hover{
+            transform: translate(0%, 0%) scale(1.2);
+        }
+    }
+
+    &__input{
+        margin: 12px 0;
+        outline: none;
+        &--btn{
+            margin: 30px 0 0 auto;
+            background-color: rgba($body-color, .5);
+        }
+
+        &--text{
+            @include font($btn-ff, 1.8rem, $secondary-color, 400, $lh: 1.8);
+            max-height: 58px;
+            padding: 10px 0;
+            overflow: hidden;
+            border: 0;
+            border-bottom: $border-width solid $grey-color;
+            &:focus:invalid{
+                border-bottom: 1px solid red;
+            }
+
+            &:focus:valid{
+                border-bottom: 1px solid green;
+            }
+
+        }
+    }
+}
+
+
+
+
 
 
 .footer{
     background-color: $secondary-color;
-    padding: 100px 0;
+    padding: 140px 0 80px;
     @include bg;
     min-width:100%;
+    &__sign {
+        @include flex ($align-items: center, $justify-content: space-between);
+    }
     &__copy {
         margin: 30px 0;
         @include font($btn-ff, 1.4rem, $body-color, 400, $lh: 1.6);
         &__link{
             text-decoration: none;
             @include font($btn-ff, 1.4rem, $body-color, 400, $lh: 1.6);
+            @include hover{
+                color: $primary-color;
+            }
         }
     }
+}
+
+.gm-style-iw-d {
+    @include font($btn-ff, 1.4rem, $secondary-color, 400, $lh: 1.6);
+    padding: 10px;
 }
 
 
