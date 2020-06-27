@@ -40,9 +40,25 @@ $(document).ready(function () {
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    
-    //autoplay: true,
-    autoplaySpeed: 4000
+    autoplay: true,
+    autoplaySpeed: 4000,
+    responsive: [{
+        breakpoint: 1030,
+        settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: false,
+        }
+      },{
+        breakpoint: 600,
+        settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        }
+      },
+    ]
 
   });            
 });
@@ -73,35 +89,6 @@ var map, marker, infowindow, geocoder;
 // }
 
 
-
-MyMap = function () { 
-  self = this; // потребуется для ссылки на экземпляр MyMap во вложенных функциях 
-  this.map = map, // можно не создавать объект LatLng явно, а использовать литерал такого вида mapTypeId: google.maps.MapTypeId.ROADMAP }); 
-  this.markers = new Array; 
-  this.markers[0] = new google.maps.Marker({ position: new google.maps.LatLng(55.763525,37.560893), // опять обходимся без дополнительной переменной 
-  map: this.map, title: 'Пробная точка!' }); // сюда будет добавляться новый код 
-  }; 
-  myMap = new MyMap; 
-  google.maps.event.addDomListener(window, 'load', myMap);
-
-this.MoveMapTo = function(lat,lng) { 
-  return function(e) { 
-    self.map.panTo(new google.maps.LatLng(lat,lng)); 
-  }
- } 
- google.maps.event.addDomListener(document.getElementById('newYork'), 'click', this.moveMapTo(40.6738771,73.972278));
- google.maps.event.addDomListener(document.getElementById('hongKong'), 'click', this.moveMapTo(22.3277246, 114.1555149)); 
-
- setInterval(function() { 
-  self.markers[0].setPosition( new google.maps.LatLng(self.markers[0].getPosition().lat()+Math.random()*0.0002-0.0001, self.markers[0].getPosition().lng()+0.0001));
- },100);
-
- setInterval(function() { 
-  if (self.map.getBounds().contains(self.markers[0].getPosition())) { 
-    self.map.panTo(self.markers[0].getPosition()); 
-  } 
- },5000);
-
 function initMap() {
 
   // geocoder = new google.maps.Geocoder();
@@ -118,7 +105,7 @@ function initMap() {
     
   map = new google.maps.Map(
     document.getElementById('map'), {
-    zoom: 13,
+    zoom: 14,
     center: centrMap,
       styles: [{
                 "elementType": "geometry",

@@ -14,10 +14,6 @@ header {
     @include font($ff: $body-ff, $fz: 1.6rem, $fc: $body-color, $fw: 800, $lh:1.4);
     text-transform: uppercase;
     vertical-align: middle; 
-    // @media screen and (max-width: 1024px){
-    //     @include posA($top: 0, $left: 50%, $delta-y: 0);
-    //     bottom: auto;
-    // }
   
     &__logo {
         fill: $body-color; 
@@ -26,9 +22,6 @@ header {
             transform: scale(.9) ;  
             fill: $primary-color;
         }
-        @media screen and (max-width: 996px) {
-            margin-left: 15px;
-        } 
 
     }
     &__list {
@@ -47,9 +40,9 @@ header {
     display: inline-block;
     position: relative;
     z-index: 20;
-    & svg {
-        fill: $body-color;
-    }
+        & svg {
+            fill: $body-color;
+        }
     }
 }
 
@@ -75,7 +68,7 @@ header {
         z-index: -1;
         background-color: $primary-color;
         opacity: 0;
-        transform-origin: calc(100% - 15px) 15px;
+        transform-origin: top center;
         transform: translate(0%, 0%) scale(.1);
         @include tr(.5s);
         .menu-opened & {
@@ -88,6 +81,9 @@ header {
 
 .menu-opened {
     overflow: hidden;
+    .toggler {
+        transform: translate(100%, 0%)
+    }
 }
 
 .menu {
@@ -126,7 +122,9 @@ header {
 			border: $border-width solid $body-color;
             @include posA ($top: 50%, $left: -25%);
             z-index: 1;
-            // @include tr;
+            @media screen and (max-width: 1024px){
+                display: none;
+            }
         }
         &:hover::before{
             @include hover;

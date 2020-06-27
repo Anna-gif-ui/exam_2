@@ -29,8 +29,14 @@ body {
     &--footer {
         max-width: 770px;
     }  
-    @media screen and (max-width: 992px) {
-        max-width: 750px;
+    @media screen and (max-width: 1024px) {
+        max-width: 950px;
+    }
+    @media screen and (max-width: 960px) {
+        max-width: 850px;
+    }
+    @media screen and (max-width: 768px) {
+        max-width: 700px;
     }
 }
 
@@ -116,23 +122,40 @@ body {
     margin-top: 100px;
     width: 100%;
     @include flex ($align-items: center, $justify-content: space-between);
-    // @media screen and (max-width: 768px) {
-    //     flex-wrap: wrap; 
-    //     justify-content: center;
-    // }  
+    @media screen and (max-width: 768px) {
+        margin-top: 50px;
+        @include flex ($align-items: center);
+        flex-direction: column;
+        text-align: center;
+    }  
     &--reverse {
         flex-direction: row-reverse;
         margin-top: 150px;
+        @media screen and (max-width: 768px) {
+            margin-top: 50px;
+            @include flex ($align-items: center);
+            flex-direction: column;
+            text-align: center;
+        }  
     }
     &__img{
         max-width: 630px; 
         width: 100%;
-        // width: 54%;
+        @media screen and (max-width: 1024px) {
+            max-width: 45%;
+        }
+
     }
     &__info{
         max-width: 500px;
         width: 100%;
-        // width: 41%;
+        @media screen and (max-width: 1024px) {
+            max-width: 50%;
+        }
+        @media screen and (max-width: 768px) {
+            max-width: 100%;
+            margin-top: 50px;
+        }
     }
     &__title {
         @include font($title-ff, 4.4rem, $secondary-color, 700, $lh: 1.6);
@@ -172,8 +195,15 @@ body {
     padding-top: 74%;
     overflow: hidden;  
     box-shadow: -140px -70px 0px 0px $blue-color;
+    @media screen and (max-width: 768px) {
+        box-shadow: -50px -30px 0px 0px $blue-color;
+    }
     &--reverse {
         box-shadow: 140px -70px 0px 0px $primary-color;
+        @media screen and (max-width: 768px) {
+            box-shadow: 50px -30px 0px 0px $primary-color;
+            margin-top: 70px;
+        }
     }
 }
 
@@ -313,6 +343,10 @@ body {
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 30px;
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
     &__item {
         position: relative;
         padding-top: 70%;
