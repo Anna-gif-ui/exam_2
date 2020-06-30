@@ -6,11 +6,11 @@ function closeMenu() {
   document.body.classList.remove('menu-opened');
 }
 
-// var header   = document.querySelector('header');
-// var headroom = new Headroom(header, {
-//     tolerance : 10,
-// });
-// headroom.init();
+var header   = document.querySelector('header');
+var headroom = new Headroom(header, {
+    tolerance : 10,
+});
+headroom.init();
 
 
 $(document).ready(function () {
@@ -66,27 +66,6 @@ $(document).ready(function () {
 
 var map, marker, infowindow, geocoder;
 
-
-// select.addEventListener('change', (e) => {
-
-//     console.log (e.target.value);
-//     move();
-//   })
-
-// function move () {
-
-//   geocoder.geocode( {'address': 'a[data-address]'}, function(results, status) {
-//     if (status == 'OK') {
-//         console.log(results);
-//         map.setCenter(results[0].geometry.location);
-//         marker.setPosition(results[0].geometry.location);
-//         // infowindow.close();
-//         // infowindow.setContent(`<b>${results[0].formatted_address}</b>`);
-//     } else {
-//         alert('Geocode was not successful for the following reason: ' + status);
-//     }
-//   });
-// }
 
 
 function initMap() {

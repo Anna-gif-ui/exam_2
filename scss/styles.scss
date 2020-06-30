@@ -50,7 +50,6 @@ body {
         text-transform: uppercase;
         @include clamp;
         text-align: center;
-        padding: 20px 0;
         margin-top: 40px;
         position: relative;
         &:before{
@@ -258,9 +257,7 @@ body {
     margin: 10px;
     flex: 0 1 370px;
     position: relative;
-    @include hover{
-        box-shadow: 0 0 $border-width $grey-color;
-    } 
+
     &__link{
         height: 100%;
         display: block;
@@ -299,10 +296,10 @@ body {
 
     &__author{
         text-decoration: none;
-        @include posA ($top: null, $left: 0, $delta_x: 0, $delta_y: 0); 
-        bottom: -3%;
+        @include posA ($top: null, $left: $space, $delta_x: 0, $delta_y: 0); 
+        bottom: $space;
         @include flex ($align-items: center, $justify-content: space-between);
-        margin: 30px 0 10px 0;
+        margin: 30px 0 5px 0;
         outline: none;  
     }
 
@@ -313,12 +310,19 @@ body {
         overflow: hidden;
         position: relative;
         margin: 30px 20px;
+
+        border: $border-width solid $body-color;
+        margin: -1 * $border-width;
+        @include hover{
+            box-shadow: 0 0 1px $border-width $primary-color;
+        }
     }
 
     &__author-text{
         height: 100%;
         @include flex ($align-items: left, $justify-content: center);
         flex-direction: column;
+        margin-left: 15px;
     }
 
     &__author-name{
@@ -344,8 +348,8 @@ body {
     grid-template-rows: 1fr 1fr;
     gap: 30px;
     @media screen and (max-width: 768px) {
-        grid-template-columns: 2fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr 1fr;
     }
     &__item {
         position: relative;
