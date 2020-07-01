@@ -73,11 +73,21 @@
 	& .slick-dots {
 		padding: 0;
 		@include posA ($top: auto, $left: 50%, $delta_y: 0%); 
-		bottom: -9%;
+        bottom: -9%;
+        @media screen and (max-width: 576px) {
+            bottom: -17%; 
+            max-width: 100%;
+        }
+        @media screen and (max-width: 360px) {
+            display: none;
+        }
 
 		& li {
-			margin: 0 25px ;
-			display: inline-block;
+			margin: 0 25px;
+            display: inline-block;
+            @media screen and (max-width: 472px) {
+                margin: 0 18px;
+            }
 		}
 	}
 }

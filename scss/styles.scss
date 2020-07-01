@@ -38,6 +38,9 @@ body {
     @media screen and (max-width: 768px) {
         max-width: 700px;
     }
+    @media screen and (max-width: 576px) {
+        max-width: 550px;
+    }
 }
 
 .section {
@@ -257,7 +260,13 @@ body {
     margin: 10px;
     flex: 0 1 370px;
     position: relative;
-
+        @media screen and (max-width: 576px) {
+            max-width: 70%;
+            margin: 0 auto;
+        }
+        @media screen and (max-width: 472px) {
+            max-width: 80%;  
+        }
     &__link{
         height: 100%;
         display: block;
@@ -310,7 +319,6 @@ body {
         overflow: hidden;
         position: relative;
         margin: 30px 20px;
-
         border: $border-width solid $body-color;
         margin: -1 * $border-width;
         @include hover{

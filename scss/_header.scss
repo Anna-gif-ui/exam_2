@@ -82,7 +82,7 @@ header {
 .menu-opened {
     overflow: hidden;
     .toggler {
-        transform: translate(100%, 0%)
+        // transform: translate(100%, 0%)
     }
 }
 
@@ -95,7 +95,7 @@ header {
         flex-direction: column;
         text-align: center;
     }
-    &__item{
+    &__item {
         display: inline-block;
         margin-left: 1em;
         &:not(:last-child){
@@ -109,7 +109,7 @@ header {
         transform: scale(.8);  
         }
     }
-    &__link{
+    &__link {
         text-decoration: none;
         @include font($btn-ff, 1.4rem, $body-color, 400, $lh: 1.6);
         text-transform: uppercase;
@@ -126,7 +126,7 @@ header {
                 display: none;
             }
         }
-        &:hover::before{
+        &:hover::before {
             @include hover;
             opacity: 1;
             background-color: $body-color;
@@ -142,5 +142,17 @@ header {
                     padding: 1em;
                 }
         }
+    }
+}
+
+.header {
+    position: relative;
+    background-color: $grey-color;
+    margin-bottom: 50px;
+    height: 100vh;
+    &__bg{
+        @include posA;
+        min-width: 100%;
+        height: 100vh;
     }
 }
