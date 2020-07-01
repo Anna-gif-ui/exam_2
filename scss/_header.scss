@@ -20,9 +20,8 @@ header {
         @include tr;
         @include hover {
             transform: scale(.9) ;  
-            fill: $primary-color;
+            fill: rgba($body-color, .8)
         }
-
     }
     &__list {
         @include flex ($align-items: center, $justify-content: space-between);
@@ -42,6 +41,11 @@ header {
     z-index: 20;
         & svg {
             fill: $body-color;
+            @include tr;
+            @include hover {
+                transform: scale(.9) ;  
+                fill: $blue-color;
+            }
         }
     }
 }
@@ -60,7 +64,7 @@ header {
 
     @media screen and (max-width: 1024px){
         will-change: transform;
-        padding: 50px 0 0;
+        padding: 35px 0 0;
         @include posA($top: 0, $left: null, $delta_x: null, $delta_y: null);
         right: 0; 
         width: 100vw;
@@ -81,9 +85,6 @@ header {
 
 .menu-opened {
     overflow: hidden;
-    .toggler {
-        // transform: translate(100%, 0%)
-    }
 }
 
 .menu {
@@ -145,14 +146,55 @@ header {
     }
 }
 
+
 .header {
     position: relative;
     background-color: $grey-color;
-    margin-bottom: 50px;
+    margin-bottom: 50px; 
+}
+
+.cover {
     height: 100vh;
+    position: relative;
     &__bg{
         @include posA;
         min-width: 100%;
         height: 100vh;
     }
+    &__pic {
+        &:after{
+            content: '';
+            background-image:linear-gradient(45deg, rgba(85,183,255, .8) 0%, rgba(126,90,255,.8) 100%);
+            height: 100vh;
+            @include posA($top: 50%, $left: 50%, $delta_x: -50%, $delta_y: -50%);
+            bottom: 0;
+            width: 100vw;   
+        }
+    }    
+    &__heading {
+        text-align: center;
+        text-transform: uppercase;
+        @include posA($top: 50%, $left: 50%, $delta_x: -50%, $delta_y: -50%);
+        width: 100%;
+        z-index: 10;
+    }
+    &__title {
+        @include font($title-ff, 5rem, $body-color, $fw: 700, $lh: 1.6);
+        letter-spacing: .05em;
+        z-index: 10;
+        margin: 0;
+
+    }
+    &__subtitle {
+        @include font($title-ff, 1.6rem, $body-color, $fw: 400, $lh: 1.6);
+        letter-spacing: .3em;
+    }
+}
+
+.cover__title {
+    @include font($title-ff, 5rem, $body-color, $fw: 700, $lh: 1.6);
+    letter-spacing: .05em;
+    z-index: 10;
+    margin: 0;
+
 }
