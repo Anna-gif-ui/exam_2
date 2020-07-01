@@ -475,24 +475,41 @@ body {
     overflow: hidden;
     padding: 40px 60px 40px 60px;
     @include bg ($bg-pos:center bottom, $bg-size:contain, $bg-repeat:no-repeat);
+    @media screen and (max-width: 576px) {
+       position: relative;
+       left: 0;
+       transform: translate(0);
+       width: 100vw;
+       padding-bottom: 80px;
+    }
     &__wrap{ 
         position: relative;
+        // min-width: 100vw;
         @include flex ($align-items: center, $justify-content: space-between);
+        @media screen and (max-width: 576px) {
+            flex-direction: column;
+        }
     }
 
     &__links{
         @include flex ($align-items: flex-start, $justify-content: space-between);
         flex-direction: column;
         width: 48%;
-        
+        @media screen and (max-width: 576px) {
+            width: 100%;
+        }
     }
 
     &__form{
         @include flex ($justify-content: space-between);
         flex-direction: column;
         width: 48%;
+        @media screen and (max-width: 576px) {
+            width: 100%;
+            align-items: stretch;
+            margin-top: 40px;
+        }
     }
-
 
     &__link {
         @include font($btn-ff, 1.8rem, $secondary-color, 400, $lh: 1.6);
@@ -514,8 +531,11 @@ body {
         margin: 12px 0;
         outline: none;
         &--btn {
-            margin: 30px 0 0 auto;
             background-color: rgba($body-color, .5);
+            text-align: end;
+            @media screen and (max-width: 576px) {
+                text-align: center;
+            }
         }
 
         &--text {
@@ -532,15 +552,9 @@ body {
             &:focus:valid{
                 border-bottom: $border-width solid green;
             }
-
         }
     }
 }
-
-
-
-
-
 
 .footer{
     background-color: $secondary-color;
