@@ -94,8 +94,6 @@ body {
     }
 }
 
-
-
 .section {
     overflow: hidden;  
     position: relative;
@@ -492,22 +490,24 @@ body {
     }
 
     &__links{
-        @include flex ($align-items: flex-start, $justify-content: space-between);
+        @include flex ($align-items: auto, $justify-content: space-between);
         flex-direction: column;
         width: 48%;
         @media screen and (max-width: 576px) {
             width: 100%;
+            align-items: flex-start;
+            margin-top: 15px;
         }
     }
 
     &__form{
-        @include flex ($justify-content: space-between);
+        @include flex ($align-items:auto, $justify-content: space-between);
         flex-direction: column;
         width: 48%;
         @media screen and (max-width: 576px) {
             width: 100%;
             align-items: stretch;
-            margin-top: 40px;
+            margin-top: 20px;
         }
     }
 
@@ -525,14 +525,18 @@ body {
         @include hover{
             transform: translate(0%, 0%) scale(1.2);
         }
+        @media screen and (max-width: 576px) {
+            margin: 10px 10px 25px 5px;
+        }
     }
 
     &__input {
         margin: 12px 0;
         outline: none;
+     
         &--btn {
             background-color: rgba($body-color, .5);
-            text-align: end;
+            align-self: flex-end;
             @media screen and (max-width: 576px) {
                 text-align: center;
             }
