@@ -17,7 +17,7 @@ $(document).ready(function () {
   $('.header-slider').slick({
     arrows: false,
     dots: true,
-    // adaptiveHeight: true,
+    adaptiveHeight: true,
     infinite: true,
 
     autoplay: true,
@@ -82,10 +82,9 @@ function initMap() {
     lng: -73.904117
   }
     
-  map = new google.maps.Map(
-    document.getElementById('map'), {
-    zoom: 14,
+  map = new google.maps.Map(document.getElementById('map'), {
     center: centrMap,
+    zoom: 14,
       styles: [{
                 "elementType": "geometry",
                 "stylers": [{

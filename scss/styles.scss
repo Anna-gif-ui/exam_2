@@ -28,6 +28,7 @@ body {
     width: 100%;
     &--footer {
         max-width: 770px;
+        padding: 0px 10px;
     }  
     @media screen and (max-width: 1024px) {
         max-width: 950px;
@@ -435,10 +436,10 @@ body {
             @include tr;
              transform: translate(-50%, -50%) scale(1.2);   
         }
-        &:hover:after {
-            @include tr;
-            opacity: 1;
-        }
+            &:hover:after {
+                @include tr;
+                opacity: 1;
+            }
       
         }
     }
@@ -473,18 +474,18 @@ body {
     overflow: hidden;
     padding: 40px 60px 40px 60px;
     @include bg ($bg-pos:center bottom, $bg-size:contain, $bg-repeat:no-repeat);
-    @media screen and (max-width: 576px) {
+    @media screen and (max-width: 620px) {
        position: relative;
        left: 0;
        transform: translate(0);
        width: 100vw;
-       padding-bottom: 80px;
+
     }
     &__wrap{ 
         position: relative;
         // min-width: 100vw;
         @include flex ($align-items: center, $justify-content: space-between);
-        @media screen and (max-width: 576px) {
+        @media screen and (max-width: 620px) {
             flex-direction: column;
         }
     }
@@ -493,7 +494,7 @@ body {
         @include flex ($align-items: auto, $justify-content: space-between);
         flex-direction: column;
         width: 48%;
-        @media screen and (max-width: 576px) {
+        @media screen and (max-width: 620px) {
             width: 100%;
             align-items: flex-start;
             margin-top: 15px;
@@ -504,7 +505,7 @@ body {
         @include flex ($align-items:auto, $justify-content: space-between);
         flex-direction: column;
         width: 48%;
-        @media screen and (max-width: 576px) {
+        @media screen and (max-width: 620px) {
             width: 100%;
             align-items: stretch;
             margin-top: 20px;
@@ -525,7 +526,7 @@ body {
         @include hover{
             transform: translate(0%, 0%) scale(1.2);
         }
-        @media screen and (max-width: 576px) {
+        @media screen and (max-width: 620px) {
             margin: 10px 10px 25px 5px;
         }
     }
@@ -537,8 +538,8 @@ body {
         &--btn {
             background-color: rgba($body-color, .5);
             align-self: flex-end;
-            @media screen and (max-width: 576px) {
-                text-align: center;
+            @media screen and (max-width: 620px) {
+                align-self: center;
             }
         }
 
@@ -565,12 +566,21 @@ body {
     padding: 140px 0 80px;
     @include bg;
     min-width:100%;
+    @media screen and (max-width: 620px) {
+        padding: 60px 0 40px;
+    }
     &__sign {
         @include flex ($align-items: center, $justify-content: space-between);
+        @media screen and (max-width: 450px) {
+            flex-direction: column;
+        }
     }
     &__copy {
         margin: 30px 0;
         @include font($btn-ff, 1.4rem, $body-color, 400, $lh: 1.6);
+        @media screen and (max-width: 450px) {
+            margin: 10px 20px;
+        }
         &__link{
             text-decoration: none;
             @include font($btn-ff, 1.4rem, $body-color, 400, $lh: 1.6);
