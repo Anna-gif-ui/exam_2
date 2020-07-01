@@ -320,7 +320,7 @@ body {
 
     &__author-text{
         height: 100%;
-        @include flex ($align-items: left, $justify-content: center);
+        @include flex ($align-items: start, $justify-content: center);
         flex-direction: column;
         margin-left: 15px;
     }
@@ -432,14 +432,14 @@ body {
     }
 
     &__links{
-        @include flex ($align-items: left, $justify-content: space-between);
+        @include flex ($align-items: start, $justify-content: space-between);
         flex-direction: column;
         width: 48%;
         
     }
 
     &__form{
-        @include flex ($align-items: left, $justify-content: space-between);
+        @include flex ($justify-content: space-between);
         flex-direction: column;
         width: 48%;
     }

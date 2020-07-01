@@ -1,6 +1,4 @@
-
 .header-slider{
-
     .cover {
         height: 100vh;
         position: relative;
@@ -33,10 +31,9 @@
 	&__subtitle {
         @include font($title-ff, 1.6rem, $body-color, $fw: 400, $lh: 1.6);
         letter-spacing: .3em;
-       
     }
    
-}
+    }
 }
 
 .header-slider .slick-dots {
@@ -59,14 +56,13 @@
     background-color: transparent;
     margin-bottom: 40px;
     cursor: pointer;
-    @include tr (all);
+    @include tr ();
         @include hover {
         background-color: $body-color;
         transform: scale(1.4)
         }
     }
 }
-
 
 .news-slider {
 	display: flex;
@@ -76,12 +72,11 @@
 
 	& .slick-dots {
 		padding: 0;
-    	// margin: ;
-		@include posA ($top: auto, $left: 50%, $delta_y: 0); 
+		@include posA ($top: auto, $left: 50%, $delta_y: 0%); 
 		bottom: -9%;
 
 		& li {
-			margin: 0 30px ;
+			margin: 0 25px ;
 			display: inline-block;
 		}
 	}
@@ -97,8 +92,7 @@
     transform: translate(0, -50%);
     display: none !important;
     z-index: 10;
-	cursor: pointer;
-	
+	cursor: pointer;	
 }
 
 @media screen and (min-width: 768px) {
