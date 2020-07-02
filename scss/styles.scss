@@ -550,12 +550,26 @@ body {
             overflow: hidden;
             border: 0;
             border-bottom: $border-width solid $grey-color;
-            &:focus:invalid{
-                border-bottom: $border-width solid red;
-            }
+            // &:focus:invalid{
+            //     border-bottom: $border-width solid red;
+            // }
 
-            &:focus:valid{
-                border-bottom: $border-width solid green;
+            // &:focus:valid{
+            //     border-bottom: $border-width solid green;
+            // }
+            &::placeholder {
+                color: $grey-color;
+            }
+            &:focus {
+                outline: none;
+                border-bottom: $border-width solid $primary-color;
+                @include tr;
+            }
+            &:not(:focus):invalid {
+                border-bottom: $border-width solid $grey-color;
+            }
+            &:invalid {
+                border-bottom: $border-width solid red;
             }
         }
     }

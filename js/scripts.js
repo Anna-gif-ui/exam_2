@@ -351,5 +351,4 @@ function initMap() {
       infowindow.close();
   });
 
-  // move();
 };
