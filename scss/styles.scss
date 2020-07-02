@@ -550,13 +550,6 @@ body {
             overflow: hidden;
             border: 0;
             border-bottom: $border-width solid $grey-color;
-            // &:focus:invalid{
-            //     border-bottom: $border-width solid red;
-            // }
-
-            // &:focus:valid{
-            //     border-bottom: $border-width solid green;
-            // }
             &::placeholder {
                 color: $grey-color;
             }
