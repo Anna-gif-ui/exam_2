@@ -218,6 +218,10 @@ body {
         margin: 40px 0 60px 0;
     }
     &__link {
+
+        background-color: transparent;
+        border: none;
+outline: none;
         text-decoration: none;
         @include font($btn-ff, 1.4rem, $secondary-color, 400, $lh: 1);
         cursor: pointer;

@@ -66,11 +66,32 @@ $(document).ready(function () {
 
 var map, marker, infowindow, geocoder;
 
-
+// function geocodePlaceId(geocoder, map, infowindow) {
+//   var placeId = document.querySelectorAll('.office__link').value;
+ 
+// geocoder.geocode( { placeId: placeId }, function(results, status) {
+//   if (status == 'OK') {
+//       console.log(results);
+//       map.setCenter(results[0].geometry.location);
+//       marker.setPosition(results[0].geometry.location);
+//       infowindow.close();
+//       infowindow.setContent(`<b>${results[0].formatted_address}</b>`);
+//   } else {
+//       alert('Geocode was not successful for the following reason: ' + status);
+//   }
+// });
+// }
 
 function initMap() {
 
-  // geocoder = new google.maps.Geocoder();
+  // var geocoder = new google.maps.Geocoder();
+  // var infowindow = new google.maps.InfoWindow();
+
+  // document.addEventListener('click', clickDOMListener);
+
+  // document.querySelectorAll('.office__link').addEventListener("click", function() {
+  //   geocodePlaceId(geocoder, map, infowindow);
+  // });
 
   let coordinate = {   
     lat: 40.672658,
@@ -351,4 +372,6 @@ function initMap() {
       infowindow.close();
   });
 
-};
+}
+
+
