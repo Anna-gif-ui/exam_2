@@ -63,36 +63,36 @@ $(document).ready(function () {
   });            
 });
 
-
 var map, marker, infowindow, geocoder;
 
-// function geocodePlaceId(geocoder, map, infowindow) {
-//   var placeId = document.querySelectorAll('.office__link').value;
- 
-// geocoder.geocode( { placeId: placeId }, function(results, status) {
-//   if (status == 'OK') {
-//       console.log(results);
-//       map.setCenter(results[0].geometry.location);
-//       marker.setPosition(results[0].geometry.location);
-//       infowindow.close();
-//       infowindow.setContent(`<b>${results[0].formatted_address}</b>`);
-//   } else {
-//       alert('Geocode was not successful for the following reason: ' + status);
-//   }
-// });
-// }
+function geocodePlaceId(value) {
+
+geocoder.geocode( { 'address': value }, function(results, status) {
+  if (status == 'OK') {
+      console.log(results);
+      map.setCenter(results[0].geometry.location);
+      marker.setPosition(results[0].geometry.location);
+      infowindow.close();
+      infowindow.setContent(`<b>${results[0].formatted_address}</b>`);
+  } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+  }
+});
+}
 
 function initMap() {
 
-  // var geocoder = new google.maps.Geocoder();
-  // var infowindow = new google.maps.InfoWindow();
+  geocoder = new google.maps.Geocoder();
+  infowindow = new google.maps.InfoWindow();
 
-  // document.addEventListener('click', clickDOMListener);
+  let cities = document.querySelectorAll(".city");
 
-  // document.querySelectorAll('.office__link').addEventListener("click", function() {
-  //   geocodePlaceId(geocoder, map, infowindow);
-  // });
-
+  cities.forEach((city) => {
+    city.addEventListener("click", function() {
+      geocodePlaceId(city.getAttribute('data-address'))
+    })
+  })
+ 
   let coordinate = {   
     lat: 40.672658,
     lng: -73.904194
@@ -106,239 +106,7 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: centrMap,
     zoom: 14,
-      styles: [{
-                "elementType": "geometry",
-                "stylers": [{
-                    "color": "#f5f5f5"
-                  }
-                ]
-              },
-              {
-                "elementType": "labels.icon",
-                "stylers": [
-                  {
-                    "visibility": "off"
-                  }
-                ]
-              },
-              {
-                "elementType": "labels.text.fill",
-                "stylers": [
-                  {
-                    "color": "#616161"
-                  }
-                ]
-              },
-              {
-                "elementType": "labels.text.stroke",
-                "stylers": [
-                  {
-                    "color": "#f5f5f5"
-                  }
-                ]
-              },
-              {
-                "featureType": "administrative.land_parcel",
-                "elementType": "labels",
-                "stylers": [
-                  {
-                    "visibility": "off"
-                  }
-                ]
-              },
-              {
-                "featureType": "administrative.land_parcel",
-                "elementType": "labels.text.fill",
-                "stylers": [
-                  {
-                    "color": "#bdbdbd"
-                  }
-                ]
-              },
-              {
-                "featureType": "poi",
-                "elementType": "geometry",
-                "stylers": [
-                  {
-                    "color": "#eeeeee"
-                  }
-                ]
-              },
-              {
-                "featureType": "poi",
-                "elementType": "labels.text",
-                "stylers": [
-                  {
-                    "visibility": "off"
-                  }
-                ]
-              },
-              {
-                "featureType": "poi",
-                "elementType": "labels.text.fill",
-                "stylers": [
-                  {
-                    "color": "#757575"
-                  }
-                ]
-              },
-              {
-                "featureType": "poi.business",
-                "stylers": [
-                  {
-                    "visibility": "off"
-                  }
-                ]
-              },
-              {
-                "featureType": "poi.park",
-                "elementType": "geometry",
-                "stylers": [
-                  {
-                    "color": "#e5e5e5"
-                  }
-                ]
-              },
-              {
-                "featureType": "poi.park",
-                "elementType": "labels.text.fill",
-                "stylers": [
-                  {
-                    "color": "#9e9e9e"
-                  }
-                ]
-              },
-              {
-                "featureType": "road",
-                "elementType": "geometry",
-                "stylers": [
-                  {
-                    "color": "#ffffff"
-                  }
-                ]
-              },
-              {
-                "featureType": "road",
-                "elementType": "labels.icon",
-                "stylers": [
-                  {
-                    "visibility": "off"
-                  }
-                ]
-              },
-              {
-                "featureType": "road.arterial",
-                "stylers": [
-                  {
-                    "visibility": "off"
-                  }
-                ]
-              },
-              {
-                "featureType": "road.arterial",
-                "elementType": "labels.text.fill",
-                "stylers": [
-                  {
-                    "color": "#757575"
-                  }
-                ]
-              },
-              {
-                "featureType": "road.highway",
-                "elementType": "geometry",
-                "stylers": [
-                  {
-                    "color": "#dadada"
-                  }
-                ]
-              },
-              {
-                "featureType": "road.highway",
-                "elementType": "labels",
-                "stylers": [
-                  {
-                    "visibility": "off"
-                  }
-                ]
-              },
-              {
-                "featureType": "road.highway",
-                "elementType": "labels.text.fill",
-                "stylers": [
-                  {
-                    "color": "#616161"
-                  }
-                ]
-              },
-              {
-                "featureType": "road.local",
-                "stylers": [
-                  {
-                    "visibility": "off"
-                  }
-                ]
-              },
-              {
-                "featureType": "road.local",
-                "elementType": "labels",
-                "stylers": [
-                  {
-                    "visibility": "off"
-                  }
-                ]
-              },
-              {
-                "featureType": "road.local",
-                "elementType": "labels.text.fill",
-                "stylers": [
-                  {
-                    "color": "#9e9e9e"
-                  }
-                ]
-              },
-              {
-                "featureType": "transit",
-                "stylers": [
-                  {
-                    "visibility": "off"
-                  }
-                ]
-              },
-              {
-                "featureType": "transit.line",
-                "elementType": "geometry",
-                "stylers": [
-                  {
-                    "color": "#e5e5e5"
-                  }
-                ]
-              },
-              {
-                "featureType": "transit.station",
-                "elementType": "geometry",
-                "stylers": [
-                  {
-                    "color": "#eeeeee"
-                  }
-                ]
-              },
-              {
-                "featureType": "water",
-                "elementType": "geometry",
-                "stylers": [
-                  {
-                    "color": "#c9c9c9"
-                  }
-                ]
-              },
-              {
-                "featureType": "water",
-                "elementType": "labels.text.fill",
-                "stylers": [
-                  {
-                    "color": "#9e9e9e"
-                  }]
-                }]
+      styles: styles
 });
 
   marker = new google.maps.Marker({
@@ -346,19 +114,8 @@ function initMap() {
     map: map,
     icon: './img/marker.png',
     title: '91 Nolan Extensions Suite 670',
-    // draggable: true,
     animation : google.maps.Animation.BOUNCE,
   });
-
-  // setAnimation();
-
-  // google.maps.event.addListener(infowindow,'closeclick',function(){
-  //   marker.setAnimation(google.maps.Animation.BOUNCE);
-  // });
-
-  // marker.addListener('click', function () {
-  //   marker.setAnimation(null);
-  // });
 
   infowindow = new google.maps.InfoWindow({
     content: `<b>91 Nolan Extensions Suite 670</b>`
@@ -371,7 +128,6 @@ function initMap() {
   map.addListener('click', function() {
       infowindow.close();
   });
-
 }
 
 

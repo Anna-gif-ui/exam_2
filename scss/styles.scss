@@ -221,7 +221,7 @@ body {
 
         background-color: transparent;
         border: none;
-outline: none;
+        outline: none;
         text-decoration: none;
         @include font($btn-ff, 1.4rem, $secondary-color, 400, $lh: 1);
         cursor: pointer;
