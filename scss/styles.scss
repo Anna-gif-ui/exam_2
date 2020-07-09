@@ -495,7 +495,7 @@ body {
     }
 
     &__links{
-        @include flex ($align-items: auto, $justify-content: space-between);
+        @include flex ($align-items: start, $justify-content: space-between);
         flex-direction: column;
         width: 48%;
         @media screen and (max-width: 620px) {
@@ -506,7 +506,7 @@ body {
     }
 
     &__form{
-        @include flex ($align-items:auto, $justify-content: space-between);
+        @include flex ($align-items: stretch, $justify-content: space-between);
         flex-direction: column;
         width: 48%;
         @media screen and (max-width: 620px) {
